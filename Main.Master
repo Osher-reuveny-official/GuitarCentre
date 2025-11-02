@@ -1,0 +1,181 @@
+﻿<html>
+<head runat="server">
+    <style>
+        #header {
+            color: #247BA0;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-toggle {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            outline: none !important;
+        }
+
+        .dropdown-list {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 1;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .dropdown:hover .dropdown-list {
+            display: block;
+        }
+
+        .dropdown-list ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        .dropdown-list li {
+            padding: 5px 10px;
+        }
+
+        .dropdown-toggle:hover + .dropdown-list,
+        .dropdown-list:hover {
+            display: block;
+        }
+
+        #HeadNav {
+            background-color: #ED1C24;
+            padding: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            width: 1075px;
+            margin-left: 306px;
+        }
+
+        li a {
+            color: #F1FAEE;
+            font-size: 30px;
+            column-width: 5px;
+        }
+
+        li {
+            display: inline;
+            padding-left: 2px;
+            column-width: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+#header {
+    color: #247BA0;
+    text-align: center;
+    font-size: 20px;
+}
+
+#HeadNav {
+    background-color: #ED1C24;
+    padding: 5px;
+    width: 100%; /* Ensure navbar spans the whole page */
+}
+
+ul {
+    list-style-type: none;
+    width: 1075px;
+    margin-left: 306px;
+}
+
+li a {
+    color: #F1FAEE;
+    font-size: 30px;
+}
+
+li {
+    display: inline;
+    padding-left: 2px;
+}
+
+a {
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+      
+
+        #article {
+            background-color: #EEF5DB;
+            padding: 10px;
+            padding-bottom: 75%;
+        }
+
+        #footer {
+            background-color: #C7EFCF;
+            text-align: center;
+            padding-bottom: 5%;
+            font-size: 20px;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #con {
+            border: double;
+            border-color: burlywood;
+        }
+
+        .auto-style1 {
+            font-size: 30px;
+            color: #F1FAEE;
+        }
+
+
+        #con {
+            border: double;
+            border-color: burlywood;
+        }
+
+        .auto-style1 {
+            font-size: 30px;
+            color: #F1FAEE;
+        }
+    </style>
+    <title>Guitar Centre | </title>
+    <link href="css/my.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header id="header">
+            <h1>
+                <asp:ImageButton ID="Logo" runat="server" ImageUrl="~/Pics/GuitarCenterlogo.jpg" Height="66px" Width="98px" />
+            </h1>
+        </header>
+        <nav id="HeadNav">
+            <ul>
+                <li><a href="HomePage.aspx">Home</a></li>
+                <li class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="Products.aspx">Products</a></li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="Manufactor.aspx">Manufactor</a></li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="Clients.aspx">Clients</a> </li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="Employees.aspx">Employees</a></li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="Sales.aspx">Sales</a></li>
+            </ul>
+        </nav>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <footer id="footer">
+            <br />
+            <br />
+            copyright @GuitarCenter ltd.
+        </footer>
+    </form>
+</body>
+</html>
