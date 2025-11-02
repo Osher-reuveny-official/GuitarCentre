@@ -1,180 +1,51 @@
-﻿<html>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.Master.cs" Inherits="GuitarCentre.Site" %>
+<!DOCTYPE html>
+<html lang="en">
 <head runat="server">
-    <style>
-        #header {
-            color: #247BA0;
-            text-align: center;
-            font-size: 20px;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-toggle {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            outline: none !important;
-        }
-
-        .dropdown-list {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            z-index: 1;
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
-
-        .dropdown:hover .dropdown-list {
-            display: block;
-        }
-
-        .dropdown-list ul {
-            padding: 0;
-            margin: 0;
-        }
-
-        .dropdown-list li {
-            padding: 5px 10px;
-        }
-
-        .dropdown-toggle:hover + .dropdown-list,
-        .dropdown-list:hover {
-            display: block;
-        }
-
-        #HeadNav {
-            background-color: #ED1C24;
-            padding: 5px;
-        }
-
-        ul {
-            list-style-type: none;
-            width: 1075px;
-            margin-left: 306px;
-        }
-
-        li a {
-            color: #F1FAEE;
-            font-size: 30px;
-            column-width: 5px;
-        }
-
-        li {
-            display: inline;
-            padding-left: 2px;
-            column-width: 20px;
-        }
-
-        a {
-            text-decoration: none;
-            margin-left: 20px;
-        }
-
-#header {
-    color: #247BA0;
-    text-align: center;
-    font-size: 20px;
-}
-
-#HeadNav {
-    background-color: #ED1C24;
-    padding: 5px;
-    width: 100%; /* Ensure navbar spans the whole page */
-}
-
-ul {
-    list-style-type: none;
-    width: 1075px;
-    margin-left: 306px;
-}
-
-li a {
-    color: #F1FAEE;
-    font-size: 30px;
-}
-
-li {
-    display: inline;
-    padding-left: 2px;
-}
-
-a {
-    text-decoration: none;
-    margin-left: 20px;
-}
-
-      
-
-        #article {
-            background-color: #EEF5DB;
-            padding: 10px;
-            padding-bottom: 75%;
-        }
-
-        #footer {
-            background-color: #C7EFCF;
-            text-align: center;
-            padding-bottom: 5%;
-            font-size: 20px;
-            bottom: 0;
-            width: 100%;
-        }
-
-        #con {
-            border: double;
-            border-color: burlywood;
-        }
-
-        .auto-style1 {
-            font-size: 30px;
-            color: #F1FAEE;
-        }
-
-
-        #con {
-            border: double;
-            border-color: burlywood;
-        }
-
-        .auto-style1 {
-            font-size: 30px;
-            color: #F1FAEE;
-        }
-    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Guitar Centre | </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
     <link href="css/my.css" rel="stylesheet" />
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="head" runat="server" />
 </head>
-<body>
-    <form id="form1" runat="server">
-        <header id="header">
-            <h1>
-                <asp:ImageButton ID="Logo" runat="server" ImageUrl="~/Pics/GuitarCenterlogo.jpg" Height="66px" Width="98px" />
-            </h1>
+<body class="site-body">
+    <form id="form1" runat="server" class="site-form">
+        <div class="background-aurora" aria-hidden="true"></div>
+        <header class="site-header fade-in">
+            <div class="branding">
+                <asp:ImageButton ID="Logo" runat="server" CssClass="logo" ImageUrl="~/Pics/GuitarCenterlogo.jpg" AlternateText="Guitar Centre" OnClick="Logo_Click" />
+                <div class="branding-copy">
+                    <span class="brand-title">Guitar Centre</span>
+                    <span class="brand-tagline">Play. Perform. Perfect.</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <span class="header-badge">Since 1996</span>
+            </div>
         </header>
-        <nav id="HeadNav">
-            <ul>
-                <li><a href="HomePage.aspx">Home</a></li>
-                <li class="auto-style1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="Products.aspx">Products</a></li>
-                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="Manufactor.aspx">Manufactor</a></li>
-                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="Clients.aspx">Clients</a> </li>
-                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="Employees.aspx">Employees</a></li>
-                <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="Sales.aspx">Sales</a></li>
-            </ul>
+        <nav class="site-nav">
+            <div class="nav-inner">
+                <ul class="nav-links">
+                    <li><a href="HomePage.aspx">Home</a></li>
+                    <li><a href="Products.aspx">Products</a></li>
+                    <li><a href="Manufactor.aspx">Manufactor</a></li>
+                    <li><a href="Clients.aspx">Clients</a></li>
+                    <li><a href="Employees.aspx">Employees</a></li>
+                    <li><a href="Sales.aspx">Sales</a></li>
+                </ul>
+            </div>
         </nav>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
-        <footer id="footer">
-            <br />
-            <br />
-            copyright @GuitarCenter ltd.
+        <main class="page-content fade-up">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+        </main>
+        <footer class="site-footer fade-in">
+            <div class="footer-inner">
+                <span>© Guitar Centre Ltd.</span>
+                <span class="footer-accent">Crafting memorable performances.</span>
+            </div>
         </footer>
     </form>
 </body>

@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Reflection.Emit;
-using System.Web;
+using System;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace GuitarCentre
 {
-    public partial class Site : System.Web.UI.MasterPage
+    public partial class Site : MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,6 +14,5 @@ namespace GuitarCentre
         {
             Response.Redirect("HomePage.aspx");
         }
-
     }
 }

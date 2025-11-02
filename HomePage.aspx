@@ -1,65 +1,63 @@
-﻿<%@ Page Title="Guitar Centre | Home" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" Inherits="GuitarCentre.HomePage" %>
+<%@ Page Title="Guitar Centre | Home" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" Inherits="GuitarCentre.HomePage" %>
 
 <asp:Content ID="HeaderContent" ContentPlaceHolderID="head" runat="server">
-    <style>
-        .hero{
-            background:#111; color:#fff; border-radius:16px; padding:24px; 
-            box-shadow:0 12px 30px rgba(0,0,0,.18); margin:16px 0;
-        }
-        .grid{
-            display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px;
-        }
-        .card{
-            background:#fff; border-radius:14px; padding:16px; border:1px solid #eee;
-            box-shadow:0 6px 18px rgba(0,0,0,.06)
-        }
-        .btns a{
-            display:inline-block; padding:10px 14px; border-radius:10px; 
-            border:1px solid #ddd; text-decoration:none; margin-right:8px; margin-top:8px;
-        }
-        .btn-primary{ background:#1a73e8; color:#fff; border-color:#1a73e8; }
-        .muted{ color:#666; font-size:13px }
-    </style>
 </asp:Content>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="hero">
-        <h1 style="margin:0 0 8px">Guitar Centre — Home</h1>
-        <div class="muted">
-            <asp:Label ID="NowDate" runat="server" /> · 
-            <asp:Label ID="NowTime" runat="server" />
-        </div>
-        <div class="btns">
-            <a href="Products.aspx" class="btn-primary">Products</a>
-            <a href="Manufactor.aspx" class="btns">Manufacturers</a>
-            <a href="Clients.aspx" class="btns">Clients</a>
-            <a href="Employees.aspx" class="btns">Employees</a>
-            <a href="Sales.aspx" class="btns">Sales</a>
-            <a href="SalesAssistant.aspx" class="btns">🤖 Sales Assistant</a>
-        </div>
-    </div>
-
-    <div class="grid">
-        <div class="card">
-            <h3 style="margin-top:0">Quick Tips</h3>
-            <ul style="margin:8px 0 0 18px">
-                <li>Use <code>&lt;%$ ConnectionStrings:MyDb %></code> — no AttachDbFilename.</li>
-                <li>Keep table names consistent (e.g. <code>tblClients</code> everywhere).</li>
-                <li>Prefer <code>decimal</code> for prices/salary.</li>
-            </ul>
-        </div>
-        <div class="card">
-            <h3 style="margin-top:0">Shortcuts</h3>
-            <div class="btns">
-                <a href="Clients.aspx">Add Client</a>
-                <a href="Employees.aspx">Add Employee</a>
-                <a href="Sales.aspx">New Sale</a>
+    <section class="hero-card hero-enter">
+        <div class="hero-copy">
+            <p class="eyebrow">Welcome to Guitar Centre</p>
+            <h1 class="hero-title">Find the perfect sound for every stage.</h1>
+            <p class="hero-meta">
+                <asp:Label ID="NowDate" runat="server" CssClass="timestamp" />
+                <span aria-hidden="true">•</span>
+                <asp:Label ID="NowTime" runat="server" CssClass="timestamp" />
+            </p>
+            <p class="muted">Discover pro-level gear, manage your inventory, and keep your sales pipeline in tune.</p>
+            <div class="button-row">
+                <a href="Products.aspx" class="button primary">Browse Products</a>
+                <a href="Manufactor.aspx" class="button secondary">Meet Manufacturers</a>
+                <a href="Clients.aspx" class="button ghost">Clients Hub</a>
             </div>
         </div>
-        <div class="card">
-            <h3 style="margin-top:0">Assistant</h3>
-            <p class="muted">Ask the AI to suggest guitars by style, budget, or brand.</p>
-            <a href="SalesAssistant.aspx" class="btn-primary">Open Assistant</a>
+        <div class="hero-visual">
+            <p>“Instruments that inspire every rehearsal, session, and spotlight moment.”</p>
         </div>
-    </div>
+    </section>
+
+    <section class="card-grid fade-up">
+        <article class="info-card hover-lift">
+            <h3>Quick Tips</h3>
+            <p class="muted">Keep data tidy to make reporting and maintenance effortless.</p>
+            <ul>
+                <li>Use <code>&lt;%$ ConnectionStrings:MyDb %></code> without <code>AttachDbFileName</code>.</li>
+                <li>Keep table prefixes consistent (e.g., <code>tblClients</code>).</li>
+                <li>Prefer <code>decimal</code> for prices and salaries.</li>
+            </ul>
+        </article>
+        <article class="info-card hover-lift">
+            <h3>Shortcuts</h3>
+            <p class="muted">Jump straight to the tools your team uses most.</p>
+            <div class="button-row">
+                <a href="Clients.aspx" class="button ghost">Add Client</a>
+                <a href="Employees.aspx" class="button ghost">Add Employee</a>
+                <a href="Sales.aspx" class="button ghost">Log Sale</a>
+            </div>
+        </article>
+        <article class="info-card hover-lift">
+            <h3>Popular Searches</h3>
+            <p class="muted">See what other managers are exploring today.</p>
+            <ul class="pill-list">
+                <li>Hollow Body</li>
+                <li>Tube Amps</li>
+                <li>Pedalboards</li>
+                <li>Studio Bundles</li>
+                <li>Beginner Kits</li>
+            </ul>
+            <div class="button-row">
+                <a href="Products.aspx" class="button secondary">Explore Gear</a>
+                <a href="SalesAssistant.aspx" class="button ghost">Sales Assistant</a>
+            </div>
+        </article>
+    </section>
 </asp:Content>
